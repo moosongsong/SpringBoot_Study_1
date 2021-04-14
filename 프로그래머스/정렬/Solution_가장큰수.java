@@ -4,7 +4,7 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-class Solution {
+class Solution_가장큰수 {
     public String solution(int[] numbers) {
         String answer = "";
 
