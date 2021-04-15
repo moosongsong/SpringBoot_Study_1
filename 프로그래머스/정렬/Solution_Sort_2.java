@@ -4,9 +4,9 @@
 import java.util.Arrays;
 import java.util.Comparator;
 
-class Solution_가장큰수 {
+class Solution_Sort_2 {
     public String solution(int[] numbers) {
-        String answer = "";
+        StringBuilder answer = new StringBuilder();
 
         String[] arr = new String[numbers.length];
         int temp = 0;
@@ -29,10 +29,10 @@ class Solution_가장큰수 {
         });
 
         //정렬된 배열 수로 출력하기
-        for (int i = 0; i < arr.length; i++) {
-            answer += arr[i];
+        for (String s : arr) {
+            answer.append(s);
         }
 
-        return answer;
+        return answer.toString();
     }
 }

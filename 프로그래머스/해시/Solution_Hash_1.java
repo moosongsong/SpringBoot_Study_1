@@ -2,7 +2,7 @@
 
 import java.util.Arrays;
 
-class Solution_완주하지못한선수 {
+class Solution_Hash_1 {
     public String solution(String[] participant, String[] completion) {
 
         //정렬해서 비교하기
