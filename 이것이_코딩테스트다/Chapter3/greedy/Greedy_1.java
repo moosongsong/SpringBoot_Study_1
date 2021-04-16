@@ -1,3 +1,4 @@
+package greedy;
 // 당장 좋은 것만 선택하는 그리디
 
 // 3-1. 거스름돈 500원, 100원 50원, 10원 동전
@@ -5,11 +6,7 @@
 // N의 10의 배수
 
 public class Greedy_1 {
-    public static void main(String[] args) {
-        System.out.println(solution(200));
-    }
-
-    public static int solution(int N) {
+    public int solution(int N) {
         int[] coinType = {500, 100, 50, 10};
         int count = 0;
 
