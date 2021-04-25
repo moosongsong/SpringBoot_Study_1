@@ -1,5 +1,4 @@
-import dfs_bfs.DFS1_Stack;
-import dfs_bfs.DFS2_Queue;
+import dfs_bfs.DFS8_prob;
 
 public class Chapter5_Main {
     public static void main(String[] args) {
@@ -7,7 +6,10 @@ public class Chapter5_Main {
 //        DFS1_Stack stack = new DFS1_Stack();
 //        stack.solution();
 
-        DFS2_Queue queue = new DFS2_Queue();
-        queue.solution();
+//        DFS2_Queue queue = new DFS2_Queue();
+//        queue.solution();
+
+        DFS8_prob dfs3 = new DFS8_prob();
+        dfs3.solution(1);
     }
 }
