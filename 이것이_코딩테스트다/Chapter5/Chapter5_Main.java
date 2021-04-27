@@ -1,5 +1,4 @@
-import dfs_bfs.BFS9_prob;
-import dfs_bfs.DFS8_prob;
+import dfs_bfs.DFS10_pob;
 
 public class Chapter5_Main {
     public static void main(String[] args) {
@@ -13,7 +12,10 @@ public class Chapter5_Main {
 //        DFS8_prob dfs3 = new DFS8_prob();
 //        dfs3.solution(1);
 
-        BFS9_prob prob = new BFS9_prob();
-        prob.solution();
+//        BFS9_prob prob = new BFS9_prob();
+//        prob.solution();
+
+        DFS10_pob practice = new DFS10_pob();
+        practice.solution();
     }
 }
