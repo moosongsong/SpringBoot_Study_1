@@ -10,7 +10,7 @@ public class NUM_8958 {
             questions[i] = scanner.nextLine();
         }
 
-        int max=0;
+        int max;
         int [] score = new int[total];
 
         for (int i = 0; i < questions.length; i++) {
@@ -25,8 +25,8 @@ public class NUM_8958 {
             }
         }
 
-        for (int i = 0; i < score.length; i++) {
-            System.out.println(score[i]);
+        for (int j : score) {
+            System.out.println(j);
         }
     }
 }

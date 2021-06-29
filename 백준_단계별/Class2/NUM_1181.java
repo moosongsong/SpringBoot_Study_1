@@ -12,7 +12,7 @@ public class NUM_1181 {
             ary[i] = scanner.nextLine();
         }
 
-        Arrays.sort(ary, new Comparator<String>() {
+        Arrays.sort(ary, new Comparator<>() {
             @Override
             public int compare(String o1, String o2) {
                 if (o1.length() > o2.length()) {

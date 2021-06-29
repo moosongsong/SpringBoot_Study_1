@@ -15,8 +15,8 @@ public class NUM_1546 {
         }
 
         double temp = 0;
-        for (int i = 0; i < score.length; i++) {
-            temp += (double) score[i] / max * 100;
+        for (int j : score) {
+            temp += (double) j / max * 100;
         }
 
         System.out.println(temp / (double) total);

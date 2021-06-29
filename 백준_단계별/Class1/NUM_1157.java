@@ -23,8 +23,8 @@ public class NUM_1157 {
         }
 
         int num=0;
-        for (int i = 0; i < count.length; i++) {
-            if (count[i] == count[max_index]){
+        for (int j : count) {
+            if (j == count[max_index]) {
                 num++;
             }
         }
