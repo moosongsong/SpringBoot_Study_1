@@ -1,50 +1,92 @@
-import java.util.Scanner;
-import java.util.Stack;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
+import java.util.StringTokenizer;
 
 public class NUM_10828 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        Stack<Integer> stack = new Stack<>();
 
-        int numberOfLine = scanner.nextInt();
-        scanner.nextLine();
+    public static int[] stack;
+    public static int size = 0;
 
-        String[] lines = new String[numberOfLine];
-        for (int i = 0; i < lines.length; i++) {
-            lines[i] = scanner.nextLine().trim();
+    public static void main(String[] args) throws IOException {
+
+        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder sb = new StringBuilder();
+
+
+        StringTokenizer st;
+
+        int N = Integer.parseInt(br.readLine());
+
+        stack = new int[N];
+
+        while (N-- > 0) {
+            st = new StringTokenizer(br.readLine(), " ");
+
+            switch (st.nextToken()) {
+
+                case "push":
+                    push(Integer.parseInt(st.nextToken()));
+                    break;
+
+                case "pop":
+                    sb.append(pop()).append('\n');
+                    break;
+
+                case "size":
+                    sb.append(size()).append('\n');
+                    break;
+
+                case "empty":
+                    sb.append(empty()).append('\n');
+                    break;
+
+                case "top":
+                    sb.append(top()).append('\n');
+                    break;
+            }
+
         }
+        System.out.println(sb);
+    }
 
-        for (String line : lines) {
-            int temp;
-            if (line.equals("pop")) {
-                if (stack.empty()) {
-                    temp = -1;
-                } else {
-                    temp = stack.pop();
-                }
-            } else if (line.equals("size")) {
-                temp = stack.size();
-            } else if (line.equals("empty")) {
-                if (stack.empty()) {
-                    temp = 1;
-                } else {
-                    temp = 0;
-                }
-            } else if (line.equals("top")) {
-                if (stack.empty()){
-                    temp=-1;
-                }else {
-                    temp = stack.peek();
-                }
-            } else {
-                String[] ary = line.split(" ");
-                temp = Integer.parseInt(ary[1]);
-                stack.add(temp);
-                temp = -2;
-            }
-            if (temp !=-2){
-                System.out.println(temp);
-            }
+    public static void push(int item) {
+        stack[size] = item;
+        size++;
+    }
+
+    public static int pop() {
+        if(size == 0) {
+            return -1;
+        }
+        else {
+            int res = stack[size - 1];
+            stack[size - 1] = 0;
+            size--;
+            return res;
         }
     }
+
+    public static int size() {
+        return size;
+    }
+
+    public static int empty() {
+        if(size == 0) {
+            return 1;
+        }
+        else {
+            return 0;
+        }
+    }
+
+    public static int top() {
+        if(size == 0) {
+            return -1;
+        }
+        else {
+            return stack[size - 1];
+        }
+    }
+
 }
