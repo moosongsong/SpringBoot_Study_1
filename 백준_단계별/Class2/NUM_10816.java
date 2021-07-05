@@ -1,32 +1,28 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
 
 public class NUM_10816 {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        int n = scanner.nextInt();
-        int [] n_ary = new int[n];
-        for (int i = 0; i < n_ary.length; i++) {
-            n_ary[i] = scanner.nextInt();
-        }
-        int m = scanner.nextInt();
-        int [] m_ary = new int[m];
-        for (int i = 0; i < m_ary.length; i++) {
-            m_ary[i] = scanner.nextInt();
-        }
-        int [] m_count = new int[m];
+    public static void main(String[] args) throws IOException {
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        StringBuilder stringBuilder = new StringBuilder();
+        StringTokenizer stringTokenizer;
+        int range = 10000000;
+        int[] count = new int[(range+1)*2];
 
-        for (int k : n_ary) {
-            for (int j = 0; j < m_ary.length; j++) {
-                if (k == m_ary[j]) {
-                    m_count[j] += 1;
-                    break;
-                }
-            }
+        int n = Integer.parseInt(bufferedReader.readLine());
+        stringTokenizer = new StringTokenizer(bufferedReader.readLine(), " ");
+        for (int i = 0; i < n; i++) {
+            count[Integer.parseInt(stringTokenizer.nextToken()) + range] += 1;
         }
 
-        for (int j : m_count) {
-            System.out.print(j+" ");
+        int m = Integer.parseInt(bufferedReader.readLine());
+        stringTokenizer = new StringTokenizer(bufferedReader.readLine(), " ");
+        for (int i = 0; i < m; i++) {
+            stringBuilder.append(count[Integer.parseInt(stringTokenizer.nextToken()) + range]);
+            stringBuilder.append(' ');
         }
-
+        System.out.println(stringBuilder);
     }
 }
