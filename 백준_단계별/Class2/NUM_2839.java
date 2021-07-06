@@ -2,7 +2,7 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-public class NUM_1874 {
+public class NUM_2839 {
     public static final int[] weight = new int[]{3, 5};
 
     public static void main(String[] args) throws IOException {
