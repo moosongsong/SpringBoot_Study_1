@@ -21,7 +21,7 @@ public class NUM_2805 {
 
         long start = 0;
         long end = max;
-        long mid = 0;
+        long mid;
 
         while (start <= end) {
             mid = (start + end) / 2;
