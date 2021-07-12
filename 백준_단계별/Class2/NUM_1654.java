@@ -13,22 +13,27 @@ public class NUM_1654 {
         int n = Integer.parseInt(stringTokenizer.nextToken());
 
         int[] ary = new int[k];
-        for (int i = 0; i < k; i++) {
+        for (int i = 0; i < k; i++)
             ary[i] = Integer.parseInt(bufferedReader.readLine());
-        }
 
         Arrays.sort(ary);
 
-        for (int i = ary[0]; i > 0; i--) {
-            int temp = 0;
-            for (int value : ary) {
-                temp += value / i;
-            }
-            if (temp >= n) {
-                System.out.println(i);
-                break;
-            }
-        }
+        long max = ary[k - 1];
+        long min = 1;
+        long middle;
 
+        while (max >= min) { // 이분탐색 시작
+            middle = (max + min) / 2;
+            long temp = 0;
+
+            for (int i : ary)
+                temp += i / middle;
+
+            if (temp >= n)
+                min = middle + 1;
+            else if (temp < n)
+                max = middle - 1;
+        }
+        System.out.println(max);
     }
 }
