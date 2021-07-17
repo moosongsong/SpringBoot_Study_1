@@ -25,16 +25,13 @@ public class NUM_1931 {
             ary[i] = new Meeting(Integer.parseInt(stringTokenizer.nextToken()), Integer.parseInt(stringTokenizer.nextToken()));
         }
 
-        Arrays.sort(ary, new Comparator<Meeting>() {
-            @Override
-            public int compare(Meeting o1, Meeting o2) {
-                if (o1.close > o2.close) {
-                    return 1;
-                } else if (o1.close < o2.close) {
-                    return -1;
-                } else {
-                    return Integer.compare(o1.start, o2.start);
-                }
+        Arrays.sort(ary, (o1, o2) -> {
+            if (o1.close > o2.close) {
+                return 1;
+            } else if (o1.close < o2.close) {
+                return -1;
+            } else {
+                return Integer.compare(o1.start, o2.start);
             }
         });
 
