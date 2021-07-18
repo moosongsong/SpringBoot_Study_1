@@ -14,7 +14,7 @@ public class NUM_10162 {
 
         t = t / 10;
         for (int i = 0; i < 2; i++) {
-            bufferedWriter.write(String.valueOf(t / times[i]) + " ");
+            bufferedWriter.write(t / times[i] + " ");
             t = t % times[i];
         }
         bufferedWriter.write(String.valueOf(t));
