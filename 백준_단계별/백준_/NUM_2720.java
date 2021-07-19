@@ -8,9 +8,9 @@ public class NUM_2720 {
         int testCase = Integer.parseInt(bufferedReader.readLine());
         for (int i = 0; i < testCase; i++) {
             int money = Integer.parseInt(bufferedReader.readLine());
-            for (int j = 0; j < remain100.length; j++) {
-                bufferedWriter.write(money/remain100[j]+" ");
-                money = money%remain100[j];
+            for (int remain : remain100) {
+                bufferedWriter.write(money / remain + " ");
+                money = money % remain;
             }
             bufferedWriter.write("\n");
         }
