@@ -17,8 +17,8 @@ public class NUM_16435 {
             apple[i] = Integer.parseInt(stringTokenizer.nextToken());
         }
         Arrays.sort(apple);
-        for (int i = 0; i < apple.length; i++) {
-            if (apple[i] > l) {
+        for (int j : apple) {
+            if (j > l) {
                 break;
             } else {
                 l += 1;
