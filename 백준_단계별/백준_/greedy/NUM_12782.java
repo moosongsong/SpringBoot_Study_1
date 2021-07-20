@@ -33,5 +33,7 @@ public class NUM_12782 {
             bufferedWriter.write(count + "\n");
         }
         bufferedWriter.flush();
+        bufferedReader.close();
+        bufferedWriter.close();
     }
 }
